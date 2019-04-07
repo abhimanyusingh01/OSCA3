@@ -57,7 +57,7 @@ sem_post(&table);
 //if(count==5) exit(0);
 }
 }
-main()
+int main()
 {
 pthread_t student1,student2,student0,techer;
 sem_init(&table,0,1);
