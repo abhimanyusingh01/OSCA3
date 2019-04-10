@@ -6,9 +6,9 @@
 int table_used=1,generated_item[2],generated=0;
 char *item[]={"pen","paper","qpaper"};
 sem_t table;
+
 void *teacher(void *arg)
 {
-// agent thread function that has infinite number of ingredians
 int i,j,k=0;
 int count=0;
 while(1)
@@ -36,7 +36,7 @@ sem_post(&table);
 }
 void *studenti(void *i)
 {
-//int count=0;
+
 while(1)
 {
 sleep(1);
@@ -48,13 +48,13 @@ generated_item[1]!=(int)i)
 {
 printf("Student%d completed his work\n",(int)i);
 printf("\n");
-//count++;
+
 table_used=1;
 generated=0;
 }
 }
 sem_post(&table);
-//if(count==5) exit(0);
+
 }
 }
 int main()
